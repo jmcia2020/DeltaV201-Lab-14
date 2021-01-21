@@ -27,6 +27,28 @@ function showCart() {
   for (var i in Product.allProducts) document.createElement("tr");
   document.createElement("td");
   // TODO: Find the table body
+var tableBody = document.querySelector('#cart tbody');
+for (var i in cart.items){
+  var tr = document.createElement('tr');
+
+  var xTD = document.createElement('td'); 
+  xTD.textContent = 'x';
+  xTD.classList.add('remover');
+  xTD.id = i;
+
+  var qTD = document.createElement('td');
+  qTD.textContent = cart.items[i].quantitiy;
+
+  var iTD = document.createElement('td');
+  iTD.textContent = cart.items[i].product;
+
+  tableBody.appendChild(tr);
+  tr.appendChild(xTD);
+  tr.appendChild(qTD);
+  tr.appendchild(iTD);
+}
+
+showCart()
 
   // TODO: Iterate over the items in the cart
   // TODO: Create a TR
